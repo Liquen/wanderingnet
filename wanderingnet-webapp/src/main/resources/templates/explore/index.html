@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml" data-req-modules="explore,explore-maps">
+<head th:substituteby="common/head :: head(${map.humanName} + '| Explore | WanderingNet')"></head>
+<body class="page-explore" th:attr="data-map-file-name=${map.mapFileName}">
+    <div th:replace="explore/playlistSlide :: slide"></div>
+    <div th:replace="explore/contentSlide :: slide"></div>
+    <div th:replace="explore/exploreMap :: map"></div>
+    <div th:substituteby="common/footer :: scripts"></div>
+</body>
+</html>

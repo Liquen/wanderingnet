@@ -1,0 +1,22 @@
+rootProject.name = 'wanderingnet-parent'
+include ':wanderingnet-common'
+include ':wanderingnet-model'
+include ':wanderingnet-data'
+include ':wanderingnet-service'
+include ':wanderingnet-database'
+include ':wanderingnet-harvester'
+include ':wanderingnet-harvester-client'
+include ':wanderingnet-harvester-server'
+include ':wanderingnet-webapp'
+include ':wanderingnet-wikimedia-client'
+
+project(':wanderingnet-database').projectDir = "$rootDir/../wanderingnet-database" as File
+project(':wanderingnet-model').projectDir = "$rootDir/../wanderingnet-model" as File
+project(':wanderingnet-data').projectDir = "$rootDir/../wanderingnet-data" as File
+project(':wanderingnet-service').projectDir = "$rootDir/../wanderingnet-service" as File
+project(':wanderingnet-common').projectDir = "$rootDir/../wanderingnet-common" as File
+project(':wanderingnet-harvester').projectDir = "$rootDir/../wanderingnet-harvester" as File
+project(':wanderingnet-harvester-server').projectDir = "$rootDir/../wanderingnet-harvester-server" as File
+project(':wanderingnet-harvester-client').projectDir = "$rootDir/../wanderingnet-harvester-client" as File
+project(':wanderingnet-webapp').projectDir = "$rootDir/../wanderingnet-webapp" as File
+project(':wanderingnet-wikimedia-client').projectDir = "$rootDir/../wanderingnet-wikimedia-client" as File

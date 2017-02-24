@@ -1,0 +1,201 @@
+@import (reference) "mixins";
+@import (reference) "variables";
+
+body.page-explore {
+  overflow: hidden;
+  .wn-component {
+    height: 100vh;
+  }
+  #map-canvas-container {
+    width: 100vw;
+    left:0;
+    position: fixed;
+    .WidthTransition();
+    .LeftTransition();
+    svg {
+      width: 100%;
+      margin-top:-55px;
+    }
+  }
+  #content-slide-container {
+    left: -30vw;
+    overflow-y:scroll;
+    .LeftTransition();
+    &.wn-slided {
+      left:0;
+      .LeftTransition();
+    }
+  }
+  .wn-component.wn-slided + #map-canvas-container {
+    width: 70vw;
+    left: 30vw;
+    .WidthTransition();
+    .LeftTransition();
+  }
+  .wn-component.wn-slided + .wn-component.wn-slided + #map-canvas-container {
+    width: 40vw;
+    left: 30vw;
+    .WidthTransition();
+    .LeftTransition();
+  }
+
+  .wn-component.wn-slided + .wn-component:not(.wn-slided) + #map-canvas-container {
+    width: 70vw;
+    .WidthTransition();
+    .LeftTransition();
+  }
+
+  #playlist-slide-container {
+    right: -70vw;
+    overflow-y:scroll;
+    .RightTransition();
+    &.wn-slided {
+      right:-0vw;
+      .RightTransition();
+    }
+  }
+  #content-slide-container,
+  #playlist-slide-container {
+    z-index:200;
+    width: @slide-width;
+    position:absolute;
+    background-color: @background-main-color;
+    &.wn-slided {
+      #content-slide-close {
+        visibility: visible;
+      }
+    }
+    &:not(.wn-slided) {
+      #content-slide-close {
+        visibility: hidden;
+      }
+    }
+  }
+  #content-slide {
+    padding: 4%;
+    width:90%;
+    float: left;
+    height: 100%;
+    #content-text {
+      text-align: justify;
+    }
+    #content-tags-container {
+      text-align: center;
+    }
+    #content-tags {
+      display:inline;
+    }
+    .content-tag {
+      display: inline-table;
+      cursor: pointer;
+      i.tag-icon {
+        border: solid 1px;
+        padding: 3px;
+        border-radius: 500px;
+        font-size: 150%;
+      }
+      span.tag-count {
+        display:block;
+      }
+      &.selected {
+        i.tag-icon {
+          background-color: wheat;
+        }
+      }
+    }
+  }
+  #content-slide-close {
+    width:10%;
+    float: left;
+    height:100%;
+    i {
+      .VerticalCentered();
+      width:100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      cursor: pointer;
+      text-align: center;
+    }
+  }
+  #playlist-slide {
+    padding:5%;
+  }
+  #profile-nav {
+    position: relative;
+    float:left;
+    width: 100%;
+    padding: 10px 10%;
+    z-index: 100;
+    background: transparent;
+    display: block;
+    &:after {
+      clear: both;
+    }
+  }
+  #back-button {
+    float:left;
+    background-color: @background-main-color-alt;
+    color: @text-plain-color-alt;
+    border-radius:500px;
+    text-align: center;
+    vertical-align: middle;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size:20px;
+    font-weight: lighter;
+    cursor: pointer;
+  }
+  #my-profile {
+    float:right;
+    background-color: @background-main-color-alt;
+    color: @text-plain-color-alt;
+    border-radius:500px;
+    text-align: center;
+    vertical-align: middle;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size:20px;
+    font-weight: lighter;
+    cursor: pointer;
+  }
+  #search-box {
+    display:inline;
+    margin-left: 3vw;
+    input {
+      margin-top: 4px;
+      height: 27px;
+    }
+  }
+  #map-canvas {
+    text {
+      visibility: hidden;
+      .hover-display {
+        visibility: visible;
+      }
+    }
+    g.node.search-found path{
+      stroke: @background-main-color-alt !important;
+      stroke-width: 65 !important;
+    }
+  }
+}
+body.page-explore-list {
+  text-align: center;
+  .map-selector {
+    text-align: center;
+    background-color: @background-main-color;
+    color: @text-main-color;
+    width: 22vw;
+    height: 22vw;
+    margin: 4vw;
+    padding: 2vw;
+    border-radius: 10000px;
+    border: solid black 1px;
+    display: inline-table;
+    > div {
+
+    }
+  }
+}

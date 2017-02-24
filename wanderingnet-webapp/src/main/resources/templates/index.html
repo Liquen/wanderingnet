@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head th:substituteby="common/head :: head('Home | WanderingNet')" data-req-modules=""></head>
+<body class="page-home">
+    <div class="presentation" id="home-presentation">
+        <div class="presentation-container">
+            <h1 class="presentation-title">Liquen</h1>
+            <h3>/ˈlʌɪk(ə)n,ˈlɪtʃ(ə)n/</h3>
+            <h3><i>noun</i></h3>
+            <h4>1. Any of many symbiotic organisms, being associations of fungi and algae; often found as white or yellow patches on old walls, etc.</h4>
+        </div>
+    </div>
+    <div class="login" id="home-login">
+        <div class="login-container">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 col-md-offset-2">
+                    <div class="panel panel-default">
+                        <h1 class="text-center login-title">Sign In</h1>
+                        <div class="account-wall">
+                            <form th:action="@{/login}" method="post">
+                                <input type="text"
+                                       class="form-control"
+                                       placeholder="Email"
+                                       required="required"
+                                       name="username"/>
+                                <input type="password"
+                                       name="password"
+                                       class="form-control"
+                                       placeholder="Password"
+                                       required="required"/>
+                                <button style="background-color: gray;" class="btn btn-lg btn-primary btn-block" type="submit">
+                                    Sign in</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="panel panel-default">
+                        <h1 class="text-center login-title">Sign Up</h1>
+                        <div class="account-wall">
+                            <form th:action="@{/signup}" method="post">
+                                <input type="text"
+                                       name="name"
+                                       class="form-control"
+                                       placeholder="Your name"
+                                       required="required"/>
+                                <input type="text"
+                                       name="username"
+                                       class="form-control"
+                                       placeholder="Email"
+                                       required="required"/>
+                                <input type="password"
+                                       name="password"
+                                       class="form-control"
+                                       placeholder="Password"
+                                       required="required"/>
+                                <input type="password"
+                                       name="password-repeated"
+                                       class="form-control"
+                                       placeholder="Repeat password"
+                                       required="required"/>
+                                <button  style="background-color: gray;" class="btn btn-lg btn-primary btn-block" type="submit">
+                                    Sign up</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-legal">
+        <h2>Legal</h2>
+        <p>You are invited to participate in a research study on the future of digital memory in creative archives. This study is conducted by Marta Delatte at the Media and Memory Research Initiative - University of Hull (UK)</p>
+        <p>The aim of this research project is to create and evaluate an app that will help individuals to explore a topic of their choice on the web and provide them with information (a feedback) on their usage that will highlight the type of stereotype biases that characterize their exploration. The starting point to create the app is to identify a specific topic that is a) represented on the web in Creative Archives; b) manageable in size; c) is presented as neutrally as possible (does not have a clear bias) and d) is discussed extensively on the web providing information on its hidden biases. This has been identified as the entries in Wikipedia of a specific topic, Digital Culture. The additional reason for choosing Digital Culture is also that it is an important topic for evaluating the futures of digital memory in Creative Archives.</p>
+
+        <p>The research project has three stages:</p>
+        <ol type="a">
+        <li>You will be asked to complete an online survey about the user experience of retrieval and knowledge discovery in creative archives (The questionnaire will take approximately 8 minutes of your time)</li>
+        <li>The study will require from you an interview where you will be asked to give further information about some of the questions raised on the general survey. In order to be as unobtrusive as possible, you will be able to record it in your own space, on your own time and with your own computer and send it to the following email address research@wanderingliquen.com (The interview may take between 15 and 30 minutes)</li>
+        <li>You will be asked to participate in an 2 online events to test the usability of the application. The first event will take place between April and May 2016, the second event will take place between September and October 2016 and you will decide the extent of your participation)</li>
+    </ol>
+        <p>Your decision to participate or decline participation in this study is completely voluntary and you have the right to terminate your participation at any time without penalty.</p>
+
+        <p>Your participation in this research will be completely confidential and data will be averaged and reported in aggregate. Possible outlets of dissemination may be papers published in academic journals and a PhD dissertation. Although your participation in this research may not benefit you personally, it will help us understand how to improve the user experience of exploration in creative archives such as micro blogging sites and social media platforms.</p>
+
+        <p>There are no risks to individuals participating in this survey beyond those that exist in daily life. If you have questions about this project, you may contact research@wanderingliquen.com. If you have any concerns about the way in which the study has been conducted, you should contact the Chair of the School of Drama, Music and Screen Ethics Committee sdms-ethics@hull.ac.uk</p>
+
+
+    </div>
+    <div th:substituteby="common/footer :: scripts"></div>
+</body>
+</html>

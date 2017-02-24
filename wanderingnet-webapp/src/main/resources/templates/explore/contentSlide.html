@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<div th:fragment="slide" class="wn-component" id="content-slide-container">
+    <div id="content-slide">
+        <h2><a id="content-title" href="#" target="_blank"></a></h2>
+
+        <div id="content-tags-container">
+            <div id="content-tags">
+                <div class="content-tag"
+                     th:each="tag : ${tags}"
+                     th:attr="data-tag-id=${tag.id}"
+                     th:id="|tag-${tag.id}|">
+                    <i th:class="|icon-${tag.iconName} tag-icon|"
+                       th:title="${tag.name}"></i>
+                    <span class="tag-count"></span>
+                </div>
+            </div>
+        </div>
+        <div id="content-text"></div>
+
+    </div>
+    <div id="content-slide-close">
+        <i class="fa fa-caret-left fa-2x"></i>
+    </div>
+</div>
+
+</body>
+</html>

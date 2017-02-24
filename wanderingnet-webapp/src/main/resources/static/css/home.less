@@ -1,0 +1,25 @@
+
+@import (reference) "mixins";
+@import (reference) "variables";
+body.page-home {
+  > * {
+    background-color:@background-main-color;
+    height: 100vh;
+  }
+  .presentation .presentation-container,
+  .login .login-container {
+    .VerticalCentered();
+  }
+  .presentation .presentation-container {
+    width: 50vw;
+    left: 25vw;
+  }
+  .presentation .presentation-title {
+    border-bottom: solid @color-main-text 2px;
+    padding-bottom: 5px;
+    margin-top:0;
+  }
+  .home-legal {
+    padding: 4vh 4vw;
+  }
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml" data-req-modules="explore,explore-maps">
+<head th:substituteby="common/head :: head('| Explore | WanderingNet')"></head>
+<body class="page-explore-list">
+    <h1>Choose a map</h1>
+    <a class="map-selector" th:each="map : ${maps}" th:href="|/explore/${map.nameKey}">
+        <div>
+            <h3 th:text="${map.humanName}"></h3>
+            <h4 th:text="${map.size}"></h4>
+        </div>
+    </a>
+</body>
+</html>

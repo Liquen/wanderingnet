@@ -1,0 +1,24 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE")
+    }
+}
+
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":wanderingnet-common")
+    compile project(":wanderingnet-model")
+    compile 'com.zaxxer:HikariCP:2.4.3'
+    compile("org.springframework.boot:spring-boot-autoconfigure:1.3.3.RELEASE")
+    compile("org.springframework:spring-jdbc:4.2.5.RELEASE")
+    compile("org.springframework:spring-aspects:4.2.5.RELEASE")
+    testCompile("junit:junit")
+}

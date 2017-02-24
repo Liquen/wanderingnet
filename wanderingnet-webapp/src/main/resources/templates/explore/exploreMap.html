@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+<div th:fragment="map" class="wn-component" id="map-canvas-container">
+    <div id="profile-nav">
+        <a id="back-button" href="/explore"> <i class="fa fa-arrow-left"></i></a>
+        <span style="margin-left: 20px;" th:text="${map.humanName}">
+
+        </span>
+        <div id="search-box">
+            <input type="text" placeholder="Search ..."/>
+        </div>
+        <div id="my-profile" th:text="${user.user.name.toUpperCase().charAt(0)}">
+            G
+        </div>
+    </div>
+    <div id="map-canvas">
+
+    </div>
+</div>
+
+</body>
+</html>

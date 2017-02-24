@@ -7,3 +7,6 @@ gradle/
 .git/
 target/
 node_modules/
+build/
+.gradle/
+*/run.sh
